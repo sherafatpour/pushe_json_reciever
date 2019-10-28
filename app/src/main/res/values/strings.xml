@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Snowa Notify</string>
+    <string name="unread">خوانده نشده</string>
+    <string name="archive">بایگانی</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
