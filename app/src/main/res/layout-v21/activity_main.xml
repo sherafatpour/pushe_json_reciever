@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_alignParentTop="true"
@@ -27,6 +27,8 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:src="@drawable/ic_entekhab_notify" />
+
+
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>

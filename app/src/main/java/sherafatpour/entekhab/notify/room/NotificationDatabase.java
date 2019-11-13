@@ -1,4 +1,4 @@
-package sherafatpour.entekhab.notify;
+package sherafatpour.entekhab.notify.room;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -9,7 +9,9 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {Notification.class}, version = 1)
+import sherafatpour.entekhab.notify.model.Notification;
+
+@Database(entities = {Notification.class}, version = 1, exportSchema = false)
 public abstract class NotificationDatabase extends RoomDatabase {
 
     private static NotificationDatabase instance;
@@ -45,9 +47,10 @@ public abstract class NotificationDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            notificationDao.insert(new Notification("title", "Description1", 1));
-            notificationDao.insert(new Notification("title", "Description2", 2));
-            notificationDao.insert(new Notification("title", "Description3", 3));
+           notificationDao.insert(new Notification("test", "Description1", 1,"sale","snowa",1,false));
+           notificationDao.insert(new Notification("test", "Description1", 1,"sale","snowa",0,false));
+          /*   notificationDao.insert(new Notification("test", "Description2", 2,0,false));
+            notificationDao.insert(new Notification("title", "Description3", 3,0,false));*/
 
             return null;
         }

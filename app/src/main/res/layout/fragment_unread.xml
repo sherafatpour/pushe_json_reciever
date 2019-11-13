@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.UnreadFragment">
+    tools:context=".view.UnreadFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/recycler_unread"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/notify_item"

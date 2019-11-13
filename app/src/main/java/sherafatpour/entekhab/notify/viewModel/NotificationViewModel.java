@@ -1,4 +1,4 @@
-package sherafatpour.entekhab.notify;
+package sherafatpour.entekhab.notify.viewModel;
 
 import android.app.Application;
 
@@ -8,14 +8,20 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
+import sherafatpour.entekhab.notify.model.Notification;
+import sherafatpour.entekhab.notify.room.NotificationRepository;
+
 public class NotificationViewModel extends AndroidViewModel {
     private NotificationRepository repository;
-    private LiveData<List<Notification>> allNote;
+    private LiveData<List<Notification>> unreadNotification;
+    private LiveData<List<Notification>> readNotification;
+
     public NotificationViewModel(@NonNull Application application) {
         super(application);
 
         repository = new NotificationRepository(application);
-        allNote = repository.getAllNotes();
+        unreadNotification = repository.getAllUnReadNotification();
+        readNotification = repository.getAllReadNotification();
     }
 
     public void insert(Notification note){
@@ -30,9 +36,14 @@ public class NotificationViewModel extends AndroidViewModel {
     public void deleteAllNotes(){
         repository.deleteAllNotes();
     }
+    public void updateStatus(int id){ repository.updateStatus(id); }
 
-    public  LiveData<List<Notification>> getAllNote ()
+    public  LiveData<List<Notification>> getUnReadNotification ()
     {
-       return allNote;
+       return unreadNotification;
+    }
+    public  LiveData<List<Notification>> getReadNotification ()
+    {
+       return readNotification;
     }
 }

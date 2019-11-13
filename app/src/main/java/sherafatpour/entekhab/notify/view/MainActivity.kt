@@ -1,4 +1,4 @@
-package sherafatpour.entekhab.notify
+package sherafatpour.entekhab.notify.view
 
 import androidx.appcompat.app.AppCompatActivity
 
@@ -9,10 +9,12 @@ import android.widget.TextView
 
 import co.ronash.pushe.Pushe
 import kotlinx.android.synthetic.main.activity_main.*
+import sherafatpour.entekhab.notify.R
+import sherafatpour.entekhab.notify.adapter.PageAdapter
 import sherafatpour.entekhab.notify.util.GlobalClass
 
 class MainActivity : AppCompatActivity() {
-    lateinit var globalClass: GlobalClass
+    private lateinit var globalClass: GlobalClass
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
