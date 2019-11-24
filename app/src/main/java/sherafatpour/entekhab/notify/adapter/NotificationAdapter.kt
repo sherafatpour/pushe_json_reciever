@@ -158,6 +158,11 @@ class NotificationAdapter(var context: Context) : ListAdapter<Notification, Noti
             val intent = Intent(context, NotificationDetail::class.java)
             intent.flags = FLAG_ACTIVITY_NEW_TASK
             intent.putExtra("id",getNoteAt(position).id)
+            intent.putExtra("title",getNoteAt(position).title)
+            intent.putExtra("type",getNoteAt(position).type)
+            intent.putExtra("description",getNoteAt(position).description)
+            intent.putExtra("brand",getNoteAt(position).brand)
+            intent.putExtra("priority",getNoteAt(position).priority)
             context.startActivity(intent)
 
         }

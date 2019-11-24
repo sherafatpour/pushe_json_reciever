@@ -23,10 +23,10 @@ class UnreadFragment : Fragment() {
 
     private var noteViewModel: NotificationViewModel? = null
 
-companion object{
+    companion object {
 
-    fun newInstance()= UnreadFragment()
-}
+        fun newInstance() = UnreadFragment()
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -37,14 +37,11 @@ companion object{
         recyclerView.setHasFixedSize(true)
         val noteAdapter = NotificationAdapter(activity!!.applicationContext)
         recyclerView.adapter = noteAdapter
-
         noteViewModel = ViewModelProviders.of(this).get(NotificationViewModel::class.java)
-
         noteViewModel!!.unReadNotification.observe(this, Observer<List<Notification>> { notes ->
             //update RecyclerView
-             noteAdapter.submitList(notes)
+            noteAdapter.submitList(notes)
         })
-
 
 
         // Inflate the layout for this fragment

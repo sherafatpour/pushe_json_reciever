@@ -15,7 +15,6 @@ import sherafatpour.entekhab.notify.util.GlobalClass
 
 class MainActivity : AppCompatActivity() {
     private lateinit var globalClass: GlobalClass
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,9 +25,7 @@ class MainActivity : AppCompatActivity() {
         tabLayout.setupWithViewPager(viewPager)
         viewPager.offscreenPageLimit = 2
         val adapter = PageAdapter(supportFragmentManager)
-
         viewPager.adapter = adapter
-
         globalClass.statusBarColor(window)
        // changeTabsFont()
         /* FloatingActionButton buttonAddNote = findViewById(R.id.button_add_note);

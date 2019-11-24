@@ -16,7 +16,6 @@ class MyPushListener : PusheListenerService() {
         //Do something with json
         try {
             noteViewModel = NotificationViewModel(application)
-
             val title = customContent.getString("title")
             val content = customContent.getString("content")
             val priority = customContent.getInt("priority")
